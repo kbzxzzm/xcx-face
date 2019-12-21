@@ -1,0 +1,19 @@
+
+module.exports.format = function (timestamp) {
+
+  // 1. 需要将传入的时间转换为时间对象
+  // wxs 中没有 new 这个关键字
+  // new Date();
+
+  // 2. wxs 中使用 getDate 函数，来获得时间对象
+  // 相当于 js 中 new Date()
+
+  // 3. 得到时间对象
+  var d = getDate(timestamp);
+
+  var y = d.getFullYear(),
+      m = d.getMonth() + 1, // 0 ~ 11
+      D = d.getDate()
+
+  return y + '年' + m + '月' + D + '日';
+}

@@ -1,0 +1,6 @@
+/* pages/cart/index.wxss */
+
+ff-canvas {
+  width: 100%;
+  height: 480rpx;
+}

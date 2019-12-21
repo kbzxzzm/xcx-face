@@ -1,0 +1,33 @@
+
+<!--
+  1. 通过 template 标签来定义模板
+  需要通过 name 来为模板命名
+-->
+
+<template name="header">
+  <view class="header">
+    <text>姓名: 小明明</text>
+    <text>年龄: 18</text>
+  </view>
+</template>
+
+<!--
+  2. 模板内容并不会直接渲染到页面中，需要通过 template 标签
+  来应用模板，需要使用 is 属性来指定哪一个模板
+-->
+
+<template is="header"></template>
+<template is="header"></template>
+<template is="header"></template>
+
+<!--
+  3. 还可以将模板独立到文件中，通过 import 标签将其引入
+-->
+
+<import src="../common/footer.wxml" />
+
+<template is="footer"></template>
+
+<!-- 4. 在应用模板时，通过 data 属性可以向模板内部传入数据 -->
+
+<template is="footer" data="{{school: '黑马程序员'}}"></template>

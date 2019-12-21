@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header": "../../components/header/index",
+    "ff-canvas": "@antv/f2-canvas",
+    "calendar": "/components/calendar/index"
+  }
+}

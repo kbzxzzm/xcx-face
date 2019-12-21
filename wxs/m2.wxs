@@ -1,0 +1,11 @@
+
+// 使用 require 可以导入另一个 wxs 模块
+var m3 = require('./m3.wxs');
+// 不支持 const let
+
+module.exports.sayHello = function () {
+  // wxs 不支持模板字符串
+  // console.log(`你好呀！ + ${m3.name}`);
+  
+  console.log('你好呀！' + m3.name);
+}

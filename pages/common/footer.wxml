@@ -1,0 +1,5 @@
+<template name="footer">
+  <view class="footer">
+    版权所有 @{{school}}
+  </view>
+</template>

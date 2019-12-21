@@ -1,0 +1,40 @@
+
+<van-button plain type="primary">Vant按钮</van-button>
+
+<van-icon name="close" />
+
+<view>{{m2.sayHello()}}</view>
+
+<!-- 导入独立的 wxs 模块 -->
+<wxs module="m2" src="../../wxs/m2.wxs"></wxs>
+
+<!-- 应用自定义组件 -->
+
+<!--
+  1. 父组件的数据传给子组件是通过属性来实现的
+  如 courses 是父级初始的数据，将它传给 list 属性
+  list 属性是子组件中定义的
+-->
+
+<!--
+  2. 子组件将数据传给父组件是通过自定义事件完成的
+  a) 父组件随便定义一个事件类型（名称）如 myevent
+  b) 子组件可以触发父组件自定义的事件
+-->
+
+<header
+  bind:myevent="mycallback"
+  a="10"
+  b="hello"
+  list="{{courses}}" />
+
+<view>{{msg}}</view>
+
+<!-- F2图表 -->
+<!-- 必须为 ff-canvas 组件设置宽高尺寸且要有一个父盒子 -->
+<view class="container">
+  <ff-canvas canvas-id="column" opts="{{opts}}"></ff-canvas>
+</view>
+
+<!-- 日历 -->
+<calendar></calendar>

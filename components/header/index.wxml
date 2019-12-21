@@ -1,0 +1,24 @@
+
+<view class="header">
+  <view>首页</view>
+  <view>登录</view>
+  <view>注册</view>
+</view>
+
+<view>
+  <text>属性a 的值为 {{a}}</text> - 
+  <text>属性b 的值为 {{b}}</text>
+</view>
+
+<view bind:tap="changeData">
+  {{msg}}
+</view>
+
+<view>
+  <text wx:key="*this" wx:for="{{list}}">{{item}}</text>
+</view>
+
+<button
+  bind:tap="emitParent"
+  style="width: 640rpx"
+  type="primary">把父组件的事件触发了</button>

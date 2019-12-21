@@ -1,0 +1,15 @@
+/* components/header/index.wxss */
+
+view {
+  margin: 40rpx 20rpx;
+}
+
+.header {
+  display: flex;
+  line-height: 60rpx;
+}
+
+.header view {
+  flex: 1;
+  text-align: center;
+}

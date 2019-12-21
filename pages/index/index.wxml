@@ -1,0 +1,49 @@
+
+<import src="../common/footer.wxml" />
+<template is="footer" data="{{school: '传智播客'}}"></template>
+
+
+<view bind:tap="sayHi">{{msg}}</view>
+
+<view>{{sayHi()}}</view>
+
+<view>{{m1.name}}</view>
+
+<view>{{m1.sayHi()}}</view>
+
+<view>{{m2.sayHello()}}</view>
+
+<view>{{now}}</view>
+
+<view>{{utils.format(now)}}</view>
+
+<!--
+  如果 wxml 中无法调用 js 中的函数，就意味着
+  在页面中没有办法处理逻辑，这时为弥补这个“缺陷”
+  又新增了 wxs ，用来在 wxml 中处理逻辑
+-->
+
+<!-- 1. 通过 wxs 标签 来定义声明 wxs 的逻辑 -->
+<!-- 2. wxs 标签必须指定 module 属性 -->
+<!-- 3. wxs 天生支持模块化 -->
+<wxs module="m1">
+  
+  // console.log('我是第一段 wxs 的脚本!');
+  
+  // 定义函数
+  function sayHi() {
+    console.log('大家好，我是传智的学员!');
+  }
+
+  var name = '小明';
+  
+  // 导出方法
+  module.exports.sayHi = sayHi;
+  module.exports.name = name;
+</wxs>
+
+<!-- 4. 通过 src 属性可以导入独立的 wxs 模块 -->
+<wxs module="m2" src="../../wxs/m2.wxs"></wxs>
+
+<!-- 引入格式化时间的模块，充当过滤器的作用 -->
+<wxs module="utils" src="../../wxs/utils.wxs"></wxs>
